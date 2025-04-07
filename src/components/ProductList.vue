@@ -26,28 +26,15 @@ export default {
     return {
       products: [
         { 
-          id: 1, 
-          name: "Camiseta", 
-          price: 250, 
-          image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+          id: 1, name: "Camiseta", price: 250, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
         },
         { 
-          id: 2, 
-          name: "Pantalón", 
-          price: 400, 
-          image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+          id: 2, name: "Pantalón", price: 400, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
         },
         { 
-          id: 3, 
-          name: "Zapatos", 
-          price: 600, 
-          image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+          id: 3,  name: "Zapatos", price: 600, image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
         },
-        { 
-          id: 4, 
-          name: "Bolso", 
-          price: 350, 
-          image: "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+        { id: 4, name: "Bolso", price: 350, image: "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
         }
       ]
     }
