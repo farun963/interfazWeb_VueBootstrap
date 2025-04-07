@@ -1,7 +1,7 @@
 <template>
      <section class="product-list-section">
     <div class="container">
-      <h2 class="section-title">Featured Products</h2>
+      <h2 class="section-title">Productos Destacados</h2>
       
       <div class="products-container">
         <div v-for="product in products" :key="product.id" class="product-card">
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-/* Los estilos se mantienen igual que en la versión anterior */
+/* ProductList.vue styles */
 .product-list-section {
   padding: 60px 0;
   background-color: #f8f9fa;
