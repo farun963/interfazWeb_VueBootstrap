@@ -11,12 +11,18 @@ const routes = [
     name: 'login',
     component: Login
   },
-  // Aquí puedes agregar más rutas cuando las necesites
   {
     path: '/dashboard',
     name: 'dashboard',
     // Lazy loading para el dashboard
     component: () => import('./components/Dashboard.vue')
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    // Lazy loading para el carrito
+    component: () => import('./components/ShoppingCart.vue'),
+    meta: { requiresAuth: true }
   }
 ];
 
@@ -25,11 +31,11 @@ const router = createRouter({
   routes
 });
 
-// Protección de rutas (opcional)
+// Protección de rutas
 router.beforeEach((to, from, next) => {
   // Ejemplo básico de protección de rutas
   const isAuthenticated = localStorage.getItem('auth-token');
-  if (to.name !== 'login' && !isAuthenticated) {
+  if (to.meta.requiresAuth && !isAuthenticated) {
     next({ name: 'login' });
   } else {
     next();
