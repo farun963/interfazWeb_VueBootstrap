@@ -8,17 +8,17 @@
               <img src="/vite.svg" alt="Vite logo" height="30" class="me-2" />
               <img src="/src/assets/vue.svg" alt="Vue logo" height="30" />
             </div>
-            <h3 class="mb-0">Iniciar Sesión</h3>
+            <h3 class="mb-0">Iniciar Sesión - Vueno Tienda</h3>
           </div>
           <div class="card-body p-4">
             <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
             <form @submit.prevent="handleSubmit">
               <div class="form-floating mb-3">
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  id="username" 
-                  v-model="username" 
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  v-model="username"
                   placeholder="Usuario"
                   :class="{ 'is-invalid': submitted && !username }"
                   required
@@ -28,13 +28,13 @@
                   Por favor ingresa tu nombre de usuario
                 </div>
               </div>
-              
+
               <div class="form-floating mb-3">
-                <input 
-                  type="password" 
-                  class="form-control" 
-                  id="password" 
-                  v-model="password" 
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  v-model="password"
                   placeholder="Contraseña"
                   :class="{ 'is-invalid': submitted && !password }"
                   required
@@ -44,14 +44,14 @@
                   Por favor ingresa tu contraseña
                 </div>
               </div>
-              
+
               <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" v-model="rememberMe" id="rememberMe" />
                 <label class="form-check-label" for="rememberMe">
                   Recordar mis datos
                 </label>
               </div>
-              
+
               <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary btn-lg" :disabled="loading">
                   <span v-if="loading" class="spinner-border spinner-border-sm me-2"></span>
@@ -91,32 +91,32 @@ const errorMessage = ref('');
 // Función para manejar el inicio de sesión
 const handleSubmit = async () => {
   submitted.value = true;
-  
+
   // Validación básica
   if (!username.value || !password.value) {
     return;
   }
-  
+
   try {
     loading.value = true;
-    
+
     // Simulación de llamada a API (reemplazar con tu propia lógica de autenticación)
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     // Ejemplo de validación (reemplazar con tu propia lógica)
     if (username.value === 'admin' && password.value === 'password') {
       console.log('Inicio de sesión exitoso');
-      
+
       // Guardar token y datos de usuario
       localStorage.setItem('auth-token', 'ejemplo-token-jwt');
       localStorage.setItem('username', username.value);
-      
+
       if (rememberMe.value) {
         localStorage.setItem('remember-user', username.value);
       } else {
         localStorage.removeItem('remember-user');
       }
-      
+
       // Redirigir al dashboard
       router.push('/dashboard');
     } else {

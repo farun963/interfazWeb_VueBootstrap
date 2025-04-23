@@ -2,7 +2,7 @@
   <section class="product-list-section">
     <div class="container">
       <h2 class="section-title">Productos Destacados</h2>
-      
+
       <div class="products-container">
         <div v-for="product in products" :key="product.id" class="product-card">
           <div class="product-image">
@@ -33,24 +33,30 @@
     </div>
   </section>
 </template>
-  
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Toast } from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // Productos
 const products = ref([
-  { 
-    id: 1, name: "Camiseta", price: 250, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+  {
+    id: 1, name: "Camiseta", price: 250, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
   },
-  { 
-    id: 2, name: "Pantalón", price: 400, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+  {
+    id: 2, name: "Pantalón", price: 400, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
   },
-  { 
-    id: 3, name: "Zapatos", price: 600, image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+  {
+    id: 3, name: "Zapatos", price: 600, image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
   },
-  { 
-    id: 4, name: "Bolso", price: 350, image: "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80" 
+  {
+    id: 4, name: "Bolso", price: 350, image: "https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+  },
+  {
+    id: 5, name: "Campera", price: 500, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
+  },
+  {
+    id: 6, name: "Cinturón", price: 100, image: "https://images.unsplash.com/photo-1553143820-6bb68bc34679?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80"
   }
 ]);
 
@@ -68,14 +74,14 @@ const addToCart = (product) => {
   // Obtener el carrito actual
   let cart = [];
   const savedCart = localStorage.getItem('cart-items');
-  
+
   if (savedCart) {
     cart = JSON.parse(savedCart);
   }
-  
+
   // Verificar si el producto ya está en el carrito
   const existingProductIndex = cart.findIndex(item => item.id === product.id);
-  
+
   if (existingProductIndex >= 0) {
     // Incrementar cantidad si ya existe
     cart[existingProductIndex].quantity += 1;
@@ -88,10 +94,10 @@ const addToCart = (product) => {
     });
     toastMessage.value = `${product.name} añadido al carrito`;
   }
-  
+
   // Guardar en localStorage
   localStorage.setItem('cart-items', JSON.stringify(cart));
-  
+
   // Mostrar toast
   toastInstance.show();
 };

@@ -1,7 +1,7 @@
 <template>
   <header class="bg-light py-3 shadow-sm">
     <div class="container d-flex justify-content-between align-items-center">
-      <h3 class="mb-0">Mi Tienda</h3>
+      <h3 class="mb-0">Vueno Tienda</h3>
 
       <form class="d-flex" role="search" @submit.prevent>
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -18,7 +18,7 @@
 
       <button class="btn btn-outline-primary position-relative" @click="goToCart">
         <i class="bi bi-cart3"></i> Carrito
-        <span v-if="cartItemCount > 0" 
+        <span v-if="cartItemCount > 0"
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{ cartItemCount }}
         </span>
@@ -54,10 +54,10 @@ const updateCartCount = () => {
 // Actualizar contador cuando se monta el componente
 onMounted(() => {
   updateCartCount();
-  
+
   // Establecer un intervalo para verificar cambios en localStorage
   const checkCartInterval = setInterval(updateCartCount, 1000);
-  
+
   // Limpiar intervalo cuando el componente se desmonta
   return () => clearInterval(checkCartInterval);
 });
