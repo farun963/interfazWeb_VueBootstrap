@@ -1,6 +1,3 @@
-
-
-
 <template>
     <section class="hero-section text-white text-center py-5" style="background: linear-gradient(to right, #41b883, #34495e);">
       <div class="container">

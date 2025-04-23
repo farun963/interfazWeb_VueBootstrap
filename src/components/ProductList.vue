@@ -4,6 +4,7 @@
       <h2 class="section-title">Productos Destacados</h2>
       
       <div class="products-container">
+        <!-- Iteración sobre cada producto en el array 'products' -->
         <div v-for="product in products" :key="product.id" class="product-card">
           <div class="product-image">
             <img :src="product.image" :alt="product.name" loading="lazy">
