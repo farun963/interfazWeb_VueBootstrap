@@ -6,6 +6,9 @@ import router from './router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+// Importar Bootstrap Icons
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 // Crear la aplicación Vue
 const app = createApp(App);
 
@@ -14,5 +17,3 @@ app.use(router);
 
 // Montar la aplicación
 app.mount('#app');
-
-// equipo uno
